@@ -1,15 +1,19 @@
-import React, { FC } from 'react'
-
-enum Test {
-  A = 10,
-  B = 20,
-  C = 30
-}
+import React, { FC, useState } from 'react'
+import InputText from '@components/inputText'
+import { Stack } from '@mui/material'
 
 const HomePage: FC = () => {
-  const x = 'A'
-  console.log(Test.A, x)
-  return <div>Home Page</div>
+  const [name, setName] = useState<string>('')
+  return (
+    <>
+      <Stack sx={{ width: '500px', m: 'auto', p: '100px' }}>
+        <InputText name='name' value={name} setValue={setName} /> <br />
+        <InputText name='name' value={name} setValue={setName} variant='filled' /> <br />
+        <InputText name='name' value={name} setValue={setName} variant='outlined' /> <br />
+        <button onClick={() => console.log(name)}>ok</button> <br />
+      </Stack>
+    </>
+  )
 }
 
 export default React.memo(HomePage)

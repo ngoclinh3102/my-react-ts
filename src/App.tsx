@@ -1,14 +1,13 @@
 import React, { FC } from 'react'
-import logo from './logo.svg'
 import './App.css'
+import { Stack } from '@mui/material'
 import { HomePage } from './pages'
 
 const App: FC = () => {
   return (
-    <div style={{ margin: '100px' }}>
-      <img src={logo} className='App-logo' alt='logo' />
+    <Stack sx={{ width: '100%', maxWidth: '1920px' }}>
       <HomePage />
-    </div>
+    </Stack>
   )
 }
 
