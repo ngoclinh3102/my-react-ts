@@ -30,6 +30,7 @@ module.exports = (env, argv) => {
         // Ví dụ: import Login from '@pages/Login'
         // Thay vì: import Login from '../pages/Login' chẳng hạn
         '@pages': path.resolve(__dirname, './src/pages'),
+        '@utils': path.resolve(__dirname, './src/utils'),
         '@components': path.resolve(__dirname, './src/components')
       }
     },

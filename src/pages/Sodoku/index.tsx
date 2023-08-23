@@ -3,11 +3,15 @@ import React, { useEffect, useState } from 'react'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import { Stack } from '@mui/material'
-import NotifyDialog from '@components/notifyDialog'
-import BackspaceRoundedIcon from '@mui/icons-material/BackspaceRounded'
 import UndoRoundedIcon from '@mui/icons-material/UndoRounded'
+import BackspaceRoundedIcon from '@mui/icons-material/BackspaceRounded'
 
-import { checkValidSodoku } from '../../utils/sodoku.js'
+import NotifyDialog from '@components/notifyDialog'
+import { checkValidSodoku } from '@utils/sodoku'
+// import { checkValidSodoku } from '@utils/sodoku'
+// import { checkValidSodoku } from '@utils/sodoku'
+
+// import { checkValidSodoku } from '../../utils/sodoku.js'
 
 const INIT_BOARD: Array<Array<number>> = [
   [6, 0, 0, 0, 0, 0, 8, 7, 2],
