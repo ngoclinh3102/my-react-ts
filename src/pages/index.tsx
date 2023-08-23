@@ -1,3 +1,3 @@
-import HomePage from './Home'
+import Header from './Header'
 
-export { HomePage }
+export { Header }
