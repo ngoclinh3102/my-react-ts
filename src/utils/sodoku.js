@@ -23,3 +23,35 @@ export const checkValidSodoku = (board) => {
 
   return errors
 }
+
+export const solveSodoku = (board) => {
+  solve(board, 0, 0)
+  return board
+}
+
+const solve = (board, row, col) => {
+  if (row === board.length) return true
+
+  if (col === board[0].length) return solve(board, row + 1, 0)
+
+  if (board[row][col] !== 0) return solve(board, row, col + 1)
+
+  for (let num = 1; num <= 9; num++) {
+    if (isValidPlacement(board, row, col, num)) {
+      board[row][col] = num
+      if (solve(board, row, col + 1)) return true
+    }
+  }
+
+  board[row][col] = 0
+  return false
+}
+
+const isValidPlacement = (board, row, col, num) => {
+  for (let i = 0; i < 9; i++) {
+    if (board[row][i] === num) return false
+    if (board[i][col] === num) return false
+    if (board[3 * parseInt(row / 3) + parseInt(i / 3)][3 * parseInt(col / 3) + parseInt(i % 3)] === num) return false
+  }
+  return true
+}

@@ -7,30 +7,17 @@ import UndoRoundedIcon from '@mui/icons-material/UndoRounded'
 import BackspaceRoundedIcon from '@mui/icons-material/BackspaceRounded'
 
 import NotifyDialog from '@components/notifyDialog'
-import { checkValidSodoku } from '@utils/sodoku'
-// import { checkValidSodoku } from '@utils/sodoku'
-// import { checkValidSodoku } from '@utils/sodoku'
+import { checkValidSodoku, solveSodoku } from '@utils/sodoku'
+import { boards } from '@stores/sodokupuzzle'
 
-// import { checkValidSodoku } from '../../utils/sodoku.js'
-
-const INIT_BOARD: Array<Array<number>> = [
-  [6, 0, 0, 0, 0, 0, 8, 7, 2],
-  [0, 7, 5, 0, 0, 1, 6, 0, 0],
-  [0, 0, 0, 0, 0, 2, 0, 0, 3],
-  [0, 2, 0, 0, 5, 0, 0, 0, 9],
-  [0, 0, 4, 3, 0, 6, 0, 0, 1],
-  [0, 6, 9, 0, 0, 4, 0, 0, 5],
-  [0, 0, 0, 9, 0, 0, 0, 0, 0],
-  [4, 0, 2, 7, 0, 0, 1, 0, 8],
-  [0, 0, 0, 4, 0, 0, 0, 2, 6]
-]
+const INIT_BOARD = boards[0]
 
 const NUMBER_PAD = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 const stack = []
 
 const COLOR = {
-  selectedBg: '#BDCDD6',
+  selectedBg: '#E3F4F4',
   errorText: '#CD1818',
   inputText: '#8EA7E9',
   selectedBorder: '#71C9CE'
@@ -116,6 +103,11 @@ const Sodoku = () => {
         ? COLOR.selectedBg
         : 'white'
     }`
+  }
+
+  const autoSolve = () => {
+    const solvedBoard = solveSodoku(board.map((row) => [...row]))
+    setBoard(solvedBoard)
   }
 
   useEffect(() => {
@@ -264,6 +256,31 @@ const Sodoku = () => {
             }}
           >
             Check
+          </Stack>
+        </Grid>
+        <Grid item xs={12}>
+          <Stack
+            onClick={autoSolve}
+            sx={{
+              cursor: 'pointer',
+              width: '100%',
+              height: '100%',
+              bgcolor: '#B9D7EA',
+              borderRadius: '10px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontWeight: 666,
+              fontSize: '1.8rem',
+              ':hover': {
+                bgcolor: '#769FCD'
+              },
+              ':active': {
+                bgcolor: '#B9D7EA'
+              }
+            }}
+          >
+            Auto Solve
           </Stack>
         </Grid>
       </Grid>
