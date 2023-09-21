@@ -15,26 +15,14 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "./src",
-    "paths": {
-      "~/*": ["/*"],
-      // "@svg/*": ["assets/svg/*"],
-      // "@img/*": ["assets/images/*"],
-      // "@icons/*": ["assets/icons/*"],
-      // "@shared/*": ["shared/*"],
-      "@components/*": ["components/*"],
-      // "@constants/*": ["constants/*"],
-      // "@hooks/*": ["hooks/*"],
-      // "@layouts/*": ["layouts/*"],
-      // "@locales/*": ["locales/*"],
-      "@pages/*": ["pages/*"],
-      // "@routes/*": ["routes/*"],
-      // "@services/*": ["services/*"],
-      "@stores/*": ["stores/*"],
-      // "@theme/*": ["theme/*"],
-      "@utils/*": ["utils/*"],
-      // "@layout/*": ["layout/*"]
-    }
+    // "baseUrl": "./src",
+    // "paths": {
+    //   "~/*": ["/*"],
+    //   "@components/*": ["components/*"],
+    //   "@pages/*": ["pages/*"],
+    //   "@stores/*": ["stores/*"],
+    //   "@utils/*": ["utils/*"]
+    // }
   },
   "include": ["src"]
 }

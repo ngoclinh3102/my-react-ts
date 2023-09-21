@@ -5,10 +5,9 @@ import Grid from '@mui/material/Grid'
 import { Stack } from '@mui/material'
 import UndoRoundedIcon from '@mui/icons-material/UndoRounded'
 import BackspaceRoundedIcon from '@mui/icons-material/BackspaceRounded'
-
-import NotifyDialog from '@components/notifyDialog'
-import { checkValidSodoku, solveSodoku } from '@utils/sodoku'
-import { boards } from '@stores/sodokupuzzle'
+import { boards } from '../../stores/sodokupuzzle'
+import { checkValidSodoku, solveSodoku } from '../../utils/sodoku'
+import NotifyDialog from '../../components/notifyDialog'
 
 const INIT_BOARD = boards[0]
 

@@ -1,8 +1,7 @@
 import React, { FC } from 'react'
 import './App.css'
 import { Stack } from '@mui/material'
-import { Header } from './pages'
-import Sodoku from '@pages/Sodoku'
+import { Header, Sodoku } from './pages'
 
 const App: FC = () => {
   return (

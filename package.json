@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/preset-typescript": "^7.22.5",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -27,9 +28,9 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d build",
     "dev": "webpack-dev-server --mode development",
-    "build": "webpack --mode production",
+    "build": "react-scripts build",
     "build:analyze": "webpack --mode production --env analyze",
     "preview": "serve dist/ -s",
     "lint": "eslint --ext js,jsx,ts,tsx src/",
