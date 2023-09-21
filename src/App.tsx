@@ -7,6 +7,7 @@ import Sodoku from '@pages/Sodoku'
 const App: FC = () => {
   return (
     <Stack sx={{ width: '100%', maxWidth: '1920px' }}>
+      <div>Hello World 2</div>
       <Header />
       <Sodoku />
     </Stack>
