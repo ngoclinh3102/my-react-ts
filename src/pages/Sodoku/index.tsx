@@ -9,7 +9,7 @@ import { boards } from '../../stores/sodokupuzzle'
 import { checkValidSodoku, solveSodoku } from '../../utils/sodoku'
 import NotifyDialog from '../../components/notifyDialog'
 
-const INIT_BOARD = boards[0]
+const INIT_BOARD = boards[2]
 
 const NUMBER_PAD = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 

@@ -6,7 +6,6 @@ import { Header, Sodoku } from './pages'
 const App: FC = () => {
   return (
     <Stack sx={{ width: '100%', maxWidth: '1920px' }}>
-      <div>Hello World 2</div>
       <Header />
       <Sodoku />
     </Stack>
