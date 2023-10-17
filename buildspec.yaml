@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+  pre_build:
+    commands:
+      - yarn install
+  build:
+    commands:
+      - echo Build started on 'date'
+      - yarn dev
+  post_build:
+    commands:
+      - echo Build finished
+
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: no
+  base-directory: build
